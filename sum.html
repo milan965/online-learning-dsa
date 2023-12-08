@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    function twoSum(nums, target) {
+    let left = 0;
+    let right = nums.length - 1;
+
+    while (left < right) {
+        const sum = nums[left] + nums[right];
+
+        if (sum === target) {
+            // Return the indices of the two numbers
+            return [left, right];
+        } else if (sum < target) {
+            // If the sum is less than the target, move the left pointer to the right
+            left++;
+        } else {
+            // If the sum is greater than the target, move the right pointer to the left
+            right--;
+        }
+    }
+
+    // If no solution is found, return an empty array
+    return [];
+}
+
+// Example usage
+const nums = [2, 7, 11, 15, 8, 1];
+const target = 9;
+
+const result = twoSum(nums, target);
+console.log(result);  // Output: [0, 1]
+
+</script>
